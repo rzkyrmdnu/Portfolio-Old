@@ -10,6 +10,9 @@
     <!-- Boostrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
+    <!-- Aos CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <style>
 .jumbotron {
@@ -19,6 +22,7 @@
 
 .jumbotron img {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
 }
 
 .jumbotron audio {
@@ -76,7 +80,7 @@ footer {
     <section class="jumbotron text-center">
       <img src="img/logo/profile.jpg" alt="" width="200" class="rounded-circle img-thumbnail" />
       <h1>Danu Alexis</h1>
-      <p>Student | Front-End Dev</p>
+      <p></p>
       <audio controls>
         <source src="music/backsound.mp3">
       </audio>
@@ -99,10 +103,10 @@ footer {
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-down" data-aos-duration="1000">
             <p>Hai semuanya, nama saya Rizky Rama Dhanu. Saya seorang Front End Developer, Siswa Tkj, Free/Libre dan Open Source, Coding adalah passion dan hobi saya sejak saya berusia 15 tahun, dan saya menyukai komputer sejak saya masih kecil.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">
             <p>Saya tinggal di Mertan, Bendosari, Sukoharjo, Indonesia. Saya lahir di Sukoharjo, 31 Oktober 2005. Umur saya 16 tahun. Saya adalah siswa TKJ dari SMK Veteran 1 Sukoharjo.</p>
           </div>
         </div>
@@ -127,7 +131,7 @@ footer {
         </div>
         <div class="row">
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card" data-aos="fade-right"  data-aos-duration="1000">
               <img src="img/projects/gbrn.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <p class="card-text">Website Emblem dan Stiker Mobil</p>
@@ -136,7 +140,7 @@ footer {
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card" data-aos="fade-right"  data-aos-duration="1000"  data-aos-delay="300">
               <img src="img/projects/bookshelf.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <p class="card-text">Website Bookshelf App</p>
@@ -145,7 +149,7 @@ footer {
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card" data-aos="fade-right"  data-aos-duration="1000"  data-aos-delay="600">
               <img src="img/projects/game.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <p class="card-text">Website Game Suwit Jawa sederhana</p>
@@ -218,6 +222,27 @@ footer {
 
     <!-- Boostrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- Aos JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <!-- Gsap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/TextPlugin.min.js"></script>
+
+    <script>
+      gsap.from(".jumbotron img", {opacity: 0, duration: 2,});
+      gsap.from(".jumbotron h1", {opacity: 0, x: -50, duration: 1, delay: 0.5, ease: 'back'});
+      gsap.from(".jumbotron audio", {opacity: 0, y: -50, duration: 1, delay: 3.5, ease: 'back'});
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".jumbotron p", {duration: 2, delay: 1.5, text: "Student | Front-End Dev"})
+    </script>
 
     <!-- Danu Alexis Contact Form -->
     <script>
